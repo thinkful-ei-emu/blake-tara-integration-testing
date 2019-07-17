@@ -34,7 +34,7 @@ app.get('/apps', (req, res) => {
   console.log(validSorts.includes(sort));
 
   if((genres && !(validGenres.includes(genres))) || (sort && !(validSorts.includes(sort)))) {
-    res.status(404).json('Please enter a valid genre.');
+    res.status(404).send('invalid genre or sort');
     return;
   }
   else {
@@ -57,6 +57,5 @@ app.get('/apps', (req, res) => {
   res.status(200).json(filteredApps);
 });
 
-app.listen(8000, () => {
-  console.log('Server started on PORT 8000');
-});
+
+module.exports = app;
