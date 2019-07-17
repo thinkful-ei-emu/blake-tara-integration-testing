@@ -16,4 +16,10 @@ describe('Divide function', () => {
     const fn = () => indexFunctions.divide(a,b);
     expect(fn).to.throw();
   });
+
+  it('tests', () => {
+    const a = {x: 5};
+    const b = {x: 5};
+    expect(a).to.deep.equal(b);
+  });
 });
